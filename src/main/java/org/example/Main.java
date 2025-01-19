@@ -1,0 +1,9 @@
+package org.example;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        Rectangle r1 = new Rectangle(20,5, 255,0,150, 0);
+    }
+}
