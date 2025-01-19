@@ -4,6 +4,8 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Rectangle r1 = new Rectangle(20,5, 255,0,150, 0);
+        Rectangle r1 = new Rectangle(20,5, new Color(255,255,255,255));
+
+
     }
 }

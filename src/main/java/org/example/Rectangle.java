@@ -1,54 +1,33 @@
 package org.example;
-
-import jakarta.persistence.*;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 @Entity
 @Table(name = "rectangles")
 public class Rectangle extends Shape {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "width")
-    private double width;
-
-    @Column(name = "height")
-    private double height;
-
-    public Rectangle(double width, double height, int r, int g, int b, int a) {
-        super(new Color(r,g,b, a));
+    public long Id;
+    public double width = 0;
+    public double height = 0;
+    public Rectangle()
+    {
+        super(new Color(0,0,0));
+        width = 0;
+        height = 0;
+        color = null;
+    }
+    public Rectangle(double width, double height, Color color) {
+        super(color);
         this.width = width;
         this.height = height;
+        this.color = color;
     }
-    public Rectangle() {
-        super();
-    }
-
     @Override
-    public double getArea(){
+    public double getArea() {
         return width * height;
     }
     @Override
     public double getPerimeter() {
-        return 2 * width + 2 * height;
-    }
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public double getWidth() {
-        return width;
-    }
-    public void setWidth(double width) {
-        this.width = width;
-    }
-    public double getHeight() {
-        return height;
-    }
-    public void setHeight(double height) {
-        this.height = height;
+        return 2 * (width + height);
     }
 }
